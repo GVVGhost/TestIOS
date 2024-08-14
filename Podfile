@@ -7,5 +7,6 @@ target 'TestIOS' do
 
   # Pods for TestIOS
   pod 'SwiftLint'
+  pod 'SwiftKeychainWrapper'
   
 end

@@ -1,16 +1,20 @@
 PODS:
+  - SwiftKeychainWrapper (4.0.1)
   - SwiftLint (0.55.1)
 
 DEPENDENCIES:
+  - SwiftKeychainWrapper
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - SwiftKeychainWrapper
     - SwiftLint
 
 SPEC CHECKSUMS:
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLint: 3fe909719babe5537c552ee8181c0031392be933
 
-PODFILE CHECKSUM: 83bb25a702cd61127ded537c9bf7cf8895295939
+PODFILE CHECKSUM: d903fb818ac57034f75b2cae001ca8107001d840
 
 COCOAPODS: 1.13.0
