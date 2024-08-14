@@ -1,0 +1,11 @@
+disabled_rules:
+- vertical_whitespace
+- trailing_whitespace
+
+
+excluded:
+- ${PWD}/Pods
+- Pods
+- ../Pods
+- ./Pods
+- /Pods

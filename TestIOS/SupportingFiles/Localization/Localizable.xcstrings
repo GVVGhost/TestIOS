@@ -1,7 +1,116 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Hello, world!" : {
+    "%@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$@"
+          }
+        }
+      }
+    },
+    "Actions" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Confirm" : {
+
+    },
+    "Email" : {
+
+    },
+    "Error encoding request parameters" : {
+
+    },
+    "Failed to create URL" : {
+
+    },
+    "Failed to decode response" : {
+
+    },
+    "Failed to get a valid response" : {
+
+    },
+    "Home" : {
+
+    },
+    "Incorrect password" : {
+
+    },
+    "Invalid credentials" : {
+
+    },
+    "Log in" : {
+
+    },
+    "Log out" : {
+
+    },
+    "Log out?" : {
+
+    },
+    "Name" : {
+
+    },
+    "No data received from the server" : {
+
+    },
+    "No Internet connection" : {
+
+    },
+    "No user found with this email" : {
+
+    },
+    "Or register" : {
+
+    },
+    "Password" : {
+
+    },
+    "Register" : {
+
+    },
+    "Return back" : {
+
+    },
+    "Server error" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Toast (Error)" : {
+
+    },
+    "Toast (Info)" : {
+
+    },
+    "Toast (Success)" : {
+
+    },
+    "Toast (Warning)" : {
+
+    },
+    "Try toasts" : {
+
+    },
+    "User already exist" : {
+
+    },
+    "User email" : {
+
+    },
+    "User id" : {
+
+    },
+    "User info" : {
+
+    },
+    "User name" : {
 
     }
   },
