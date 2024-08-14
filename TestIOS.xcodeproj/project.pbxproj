@@ -28,6 +28,8 @@
 		83EC08042C6B91F700836DDF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		83EC08062C6B923C00836DDF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		83EC08092C6C9F3900836DDF /* .swiftlint */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint; sourceTree = "<group>"; };
+		83EC080D2C6CA50600836DDF /* debug-config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "debug-config.xcconfig"; sourceTree = "<group>"; };
+		83EC080E2C6CA51A00836DDF /* release-config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "release-config.xcconfig"; sourceTree = "<group>"; };
 		EC346BE5AA80DE92ABBF1D8C /* Pods-TestIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestIOS.release.xcconfig"; path = "Target Support Files/Pods-TestIOS/Pods-TestIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,8 +69,8 @@
 		83EC07F52C6B7F7300836DDF /* TestIOS */ = {
 			isa = PBXGroup;
 			children = (
-				83EC07F62C6B7F7300836DDF /* TestIOSApp.swift */,
-				83EC07F82C6B7F7300836DDF /* ContentView.swift */,
+				83EC080C2C6CA4D500836DDF /* Config */,
+				83EC080B2C6CA43700836DDF /* SupportingFiles */,
 				83EC07FA2C6B7F7400836DDF /* Assets.xcassets */,
 				83EC07FC2C6B7F7400836DDF /* Preview Content */,
 			);
@@ -81,6 +83,24 @@
 				83EC07FD2C6B7F7400836DDF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		83EC080B2C6CA43700836DDF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				83EC07F62C6B7F7300836DDF /* TestIOSApp.swift */,
+				83EC07F82C6B7F7300836DDF /* ContentView.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		83EC080C2C6CA4D500836DDF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				83EC080D2C6CA50600836DDF /* debug-config.xcconfig */,
+				83EC080E2C6CA51A00836DDF /* release-config.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		852F8A41F1083075A09D1E90 /* Frameworks */ = {
