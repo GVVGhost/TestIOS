@@ -13,6 +13,7 @@
 		83EC07FE2C6B7F7400836DDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83EC07FD2C6B7F7400836DDF /* Preview Assets.xcassets */; };
 		83EC08052C6B91F700836DDF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 83EC08042C6B91F700836DDF /* .gitignore */; };
 		83EC08072C6B923C00836DDF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 83EC08062C6B923C00836DDF /* README.md */; };
+		83EC080A2C6C9F3900836DDF /* .swiftlint in Resources */ = {isa = PBXBuildFile; fileRef = 83EC08092C6C9F3900836DDF /* .swiftlint */; };
 		AC4948E8CBFDE1008687E7B4 /* Pods_TestIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302A32466B0FA2A7429FA201 /* Pods_TestIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		83EC07FD2C6B7F7400836DDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		83EC08042C6B91F700836DDF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		83EC08062C6B923C00836DDF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		83EC08092C6C9F3900836DDF /* .swiftlint */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint; sourceTree = "<group>"; };
 		EC346BE5AA80DE92ABBF1D8C /* Pods-TestIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestIOS.release.xcconfig"; path = "Target Support Files/Pods-TestIOS/Pods-TestIOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +46,7 @@
 		83EC07EA2C6B7F7300836DDF = {
 			isa = PBXGroup;
 			children = (
+				83EC08092C6C9F3900836DDF /* .swiftlint */,
 				83EC08062C6B923C00836DDF /* README.md */,
 				83EC08042C6B91F700836DDF /* .gitignore */,
 				83EC07F52C6B7F7300836DDF /* TestIOS */,
@@ -94,7 +97,6 @@
 				727605E7E1C5FA70A9277DA7 /* Pods-TestIOS.debug.xcconfig */,
 				EC346BE5AA80DE92ABBF1D8C /* Pods-TestIOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,6 +111,7 @@
 				83EC07EF2C6B7F7300836DDF /* Sources */,
 				83EC07F02C6B7F7300836DDF /* Frameworks */,
 				83EC07F12C6B7F7300836DDF /* Resources */,
+				83EC08082C6C9EF300836DDF /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -159,6 +162,7 @@
 			files = (
 				83EC07FE2C6B7F7400836DDF /* Preview Assets.xcassets in Resources */,
 				83EC08052C6B91F700836DDF /* .gitignore in Resources */,
+				83EC080A2C6C9F3900836DDF /* .swiftlint in Resources */,
 				83EC08072C6B923C00836DDF /* README.md in Resources */,
 				83EC07FB2C6B7F7400836DDF /* Assets.xcassets in Resources */,
 			);
@@ -188,6 +192,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		83EC08082C6C9EF300836DDF /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -241,7 +263,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -304,7 +326,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
