@@ -12,7 +12,26 @@ struct SettingsScreen: View {
     @State var toast: Toast?
     @State var dataList: [LabelValueModel] = []
     @State private var showAlert = false
-    
+    @State private var list: [LabelToastModel] = [
+        LabelToastModel(
+            label: NSLocalizedString("Toast (Success)", comment: ""),
+            toast: Toast(style: .success, message: "Saved.")
+        ),
+        LabelToastModel(
+            label: NSLocalizedString("Toast (Info)", comment: ""),
+            toast: Toast(style: .info, message: "Btw, you are a good person.")
+        ),
+        LabelToastModel(
+            label: NSLocalizedString("Toast (Warning)", comment: ""),
+            toast: Toast(style: .warning, message: "Beware of a dog!")
+        ),
+        LabelToastModel(
+            label: NSLocalizedString("Toast (Error)", comment: ""),
+            toast: Toast(
+                style: .error, message: "Fatal error, blue screen level.")
+        )
+    ]
+
     var body: some View {
         Form {
             if !dataList.isEmpty {
@@ -21,9 +40,26 @@ struct SettingsScreen: View {
                         HStack(alignment: .firstTextBaseline) {
                             Image(systemName: "person.circle")
                             Text("\(element.label): \(element.value)")
-                                .font(.system(size: 16, weight: .none, design: .default))
+                                .font(
+                                    .system(
+                                        size: 16, weight: .none,
+                                        design: .default))
                             Spacer()
                         }
+                    }
+                }
+            }
+            Section(header: Text("Try toasts")) {
+                ForEach(list, id: \.self) { toastData in
+                    Button {
+                        toast = toastData.toast
+                    } label: {
+                        HStack {
+                            Text(toastData.label)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                        }
+                        .padding(.vertical, 10)
                     }
                 }
             }
@@ -34,7 +70,8 @@ struct SettingsScreen: View {
                     HStack {
                         Text("Log out")
                         Spacer()
-                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                        Image(
+                            systemName: "rectangle.portrait.and.arrow.forward")
                     }
                 }
                 .alert("Log out?", isPresented: $showAlert) {

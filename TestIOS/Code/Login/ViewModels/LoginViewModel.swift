@@ -11,8 +11,9 @@ class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var name: String = ""
+    @Published var token: String = ""
     @Published var toast: Toast?
-    
+
     func login() {
         LoginAction(
             parameters: LoginRequest(
@@ -24,7 +25,8 @@ class LoginViewModel: ObservableObject {
                 Auth.shared.setCredentials(
                     id: response.id,
                     email: response.email,
-                    name: response.name
+                    name: response.name,
+                    token: response.token
                 )
             }
         } failure: { error in
@@ -38,20 +40,22 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
-    
+
     func register() {
         RegisterAction(
             parameters: RegisterRequest(
                 email: email,
                 password: password,
-                name: name
+                name: name,
+                token: token
             )
         ).call { response in
             DispatchQueue.main.async {
                 Auth.shared.setCredentials(
                     id: response.id,
                     email: response.email,
-                    name: response.name
+                    name: response.name,
+                    token: response.token
                 )
             }
         } failure: { error in

@@ -16,7 +16,7 @@ struct LoginAction {
         403: NSLocalizedString("Incorrect password", comment: ""),
         404: NSLocalizedString("No user found with this email", comment: "")
     ]
-    
+
     func call(
         completion: @escaping (LoginResponse) -> Void,
         failure: @escaping (String) -> Void
@@ -33,10 +33,13 @@ struct LoginAction {
             ) {
                 completion(response)
             } else {
-                failure(NSLocalizedString("Failed to decode response", comment: ""))
+                failure(
+                    NSLocalizedString("Failed to decode response", comment: ""))
             }
         } failure: { errorResult in
-            failure(errorsByStatus[errorResult.status, default: errorResult.message])
+            failure(
+                errorsByStatus[errorResult.status, default: errorResult.message]
+            )
         }
     }
 }
