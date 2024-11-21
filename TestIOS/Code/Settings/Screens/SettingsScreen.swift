@@ -28,7 +28,9 @@ struct SettingsScreen: View {
         LabelToastModel(
             label: NSLocalizedString("Toast (Error)", comment: ""),
             toast: Toast(
-                style: .error, message: "Fatal error, blue screen level.")
+                style: .error,
+                message: "Fatal error, blue screen level."
+            )
         )
     ]
 

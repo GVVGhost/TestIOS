@@ -8,36 +8,65 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @State private var toast: Toast?
-    @ObservedObject var viewModel: HomeViewModel = HomeViewModel()
+  @State private var toast: Toast?
+  @ObservedObject var viewModel: HomeViewModel = HomeViewModel()
+  @State var isPresented: Bool = false
 
-    var body: some View {
-        NavigationStack {
-            List(viewModel.tasks, id: \.uuid) { task in
-                NavigationLink(value: task) {
-                    TaskListItemView(container: task)
-                }
-            }
-            .navigationDestination(for: TaskContainer.self) { task in
-                TasksDetailView(taskContainer: task)
-            }
+  var body: some View {
+    NavigationStack {
+      List {
+        ForEach(
+          viewModel.taskContainers.reversed(),
+          id: \.self
+        ) { taskContainer in
+          NavigationLink {
+            TasksDetailView(
+              taskContainer: taskContainer,
+              onDeleteContainer: { taskContainer in
+                viewModel.deleteTask(taskContainer.uuid)
+              },
+              onSaveContainer: { taskContainer in
+                viewModel.updateTask(taskContainer)
+              }
+            )
+          } label: {
+            TaskListItemView(container: taskContainer)
+          }
         }
-        .toastView(toast: $toast)
-        .onAppear {
-            viewModel.loadTasks()
+      }
+      .sheet(isPresented: $isPresented) {
+        ContainerSheetView(
+          onCreate: { taskContainer in
+            viewModel.createTask(taskContainer)
+          },
+          onFailed: { errorMessage in
+            toast = Toast(style: .error, message: errorMessage)
+          }
+        )
+      }
+      .toolbar {
+        ToolbarItem(placement: .primaryAction) {
+          Button {
+            isPresented = true
+          } label: {
+            Image(systemName: "plus")
+          }
         }
-        .refreshable {
-            viewModel.loadTasks()
-        }
-
+      }
+      .onAppear {
+        viewModel.loadTasks()
         #if DEBUG
-            Button("Reload") {
-                viewModel.exampleTasks()
-            }
+          viewModel.taskContainers = [TaskContainer.examle]
         #endif
+      }
+      .refreshable {
+        viewModel.loadTasks()
+      }
+      .toastView(toast: $viewModel.toast)
     }
+  }
 }
 
 #Preview {
-    HomeScreen()
+  HomeScreen()
 }

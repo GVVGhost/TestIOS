@@ -1,6 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "..." : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
     "%@: %@" : {
       "localizations" : {
         "en" : {
@@ -14,13 +27,40 @@
     "Actions" : {
 
     },
+    "Add new task" : {
+
+    },
     "Cancel" : {
+
+    },
+    "Completed" : {
 
     },
     "Confirm" : {
 
     },
+    "Delete" : {
+
+    },
+    "Delete this group" : {
+
+    },
+    "Delete this task" : {
+
+    },
+    "Description" : {
+
+    },
+    "Edit" : {
+
+    },
     "Email" : {
+
+    },
+    "Enter a description" : {
+
+    },
+    "Enter a title" : {
 
     },
     "Error encoding request parameters" : {
@@ -35,6 +75,9 @@
     "Failed to get a valid response" : {
 
     },
+    "Hold" : {
+
+    },
     "Home" : {
 
     },
@@ -42,6 +85,9 @@
 
     },
     "Invalid credentials" : {
+
+    },
+    "Last edit: %@" : {
 
     },
     "Log in" : {
@@ -77,13 +123,19 @@
     "Return back" : {
 
     },
+    "Save" : {
+
+    },
     "Server error" : {
+
+    },
+    "Set completion marking" : {
 
     },
     "Settings" : {
 
     },
-    "Task List" : {
+    "Title" : {
 
     },
     "Toast (Error)" : {
