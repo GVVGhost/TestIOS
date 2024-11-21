@@ -15,13 +15,7 @@ class HomeViewModel: ObservableObject {
     Auth.shared.logout()
   }
 
-  #if DEBUG
-    func exampleTasks() {
-      self.taskContainers = [TaskContainer.examle]
-    }
-  #endif
-
-  func loadTasks() {
+  func loadTaskContainers() {
     if let id = Auth.shared.getUserId() {
       let query = URLQueryItem(name: "id", value: id)
       TasksLoadingAction(queryItems: [query]).call { response in
@@ -29,57 +23,36 @@ class HomeViewModel: ObservableObject {
           self.taskContainers = response
         }
       } failure: { error in
-        DispatchQueue.main.async {
-          self.toast = Toast(
-            style: .error,
-            message: error,
-            duration: 3,
-            width: .infinity
-          )
-        }
+        self.setToast(message: error)
       }
     } else {
-      notifyAboutMissingUserId()
+      self.setToast(message: "User id is missed. Please relogin")
     }
   }
 
-  func updateTask(_ taskContainer: TaskContainer) {
+  func updateTaskContainer(_ taskContainer: TaskContainer) {
     UpdateTaskAction(taskContainer: taskContainer).call { response in
       DispatchQueue.main.async {
         if let index = self.taskContainers.firstIndex(of: taskContainer) {
           self.taskContainers[index] = response
         }
       }
-    } failure: { errorMessage in
-      DispatchQueue.main.async {
-        self.toast = Toast(
-          style: .error,
-          message: errorMessage,
-          duration: 3,
-          width: .infinity
-        )
-      }
+    } failure: { error in
+      self.setToast(message: error)
     }
   }
 
-  func createTask(_ taskContainer: TaskContainer) {
+  func createTaskContainer(_ taskContainer: TaskContainer) {
     CreateTaskAction(taskContainer: taskContainer).call { response in
       DispatchQueue.main.async {
         self.taskContainers.append(response)
       }
-    } failure: { errorMessage in
-      DispatchQueue.main.async {
-        self.toast = Toast(
-          style: .error,
-          message: errorMessage,
-          duration: 3,
-          width: .infinity
-        )
-      }
+    } failure: { error in
+      self.setToast(message: error)
     }
   }
 
-  func deleteTask(_ uuid: String) {
+  func deleteTaskContainer(_ uuid: String) {
     let query = URLQueryItem(name: "uuid", value: uuid)
     TaskDeleteAction(queryItems: [query]).call { response in
       DispatchQueue.main.async {
@@ -90,23 +63,13 @@ class HomeViewModel: ObservableObject {
         }
       }
     } failure: { error in
-      DispatchQueue.main.async {
-        self.toast = Toast(
-          style: .error,
-          message: error,
-          duration: 3,
-          width: .infinity
-        )
-      }
+      self.setToast(message: error)
     }
   }
 
-  private func notifyAboutMissingUserId() {
-    self.toast = Toast(
-      style: .error,
-      message: "User id is missed. Please relogin",
-      duration: 3,
-      width: .infinity
-    )
+  private func setToast(message: String, style: ToastStyle = .error) {
+    DispatchQueue.main.async {
+      self.toast = Toast(style: style, message: message, duration: 3, width: .infinity)
+    }
   }
 }

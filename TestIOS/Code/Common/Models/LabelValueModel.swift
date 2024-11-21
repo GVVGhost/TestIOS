@@ -8,6 +8,6 @@
 import Foundation
 
 struct LabelValueModel: Hashable {
-    let label: String
-    let value: String
+  let label: String
+  let value: String
 }

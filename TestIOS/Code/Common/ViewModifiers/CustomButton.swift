@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CustomButton: ViewModifier {
-    var color: Color = Color.blue
-    
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 24, weight: .bold, design: .default))
-            .frame(maxWidth: .infinity, maxHeight: 50)
-            .foregroundColor(Color.white)
-            .background(color)
-            .cornerRadius(5)
-    }
+  var color: Color = Color.blue
+
+  func body(content: Content) -> some View {
+    content
+      .font(.system(size: 24, weight: .bold, design: .default))
+      .frame(maxWidth: .infinity, maxHeight: 50)
+      .foregroundColor(Color.white)
+      .background(color)
+      .cornerRadius(5)
+  }
 }

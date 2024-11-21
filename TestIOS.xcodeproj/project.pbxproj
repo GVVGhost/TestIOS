@@ -40,9 +40,8 @@
 		83EC08552C6CCA5700836DDF /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08302C6CCA5700836DDF /* LoginAction.swift */; };
 		83EC08562C6CCA5700836DDF /* RegisterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08312C6CCA5700836DDF /* RegisterAction.swift */; };
 		83EC08572C6CCA5700836DDF /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08332C6CCA5700836DDF /* LoginRequest.swift */; };
-		83EC08582C6CCA5700836DDF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08342C6CCA5700836DDF /* LoginResponse.swift */; };
+		83EC08582C6CCA5700836DDF /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08342C6CCA5700836DDF /* AuthResponse.swift */; };
 		83EC08592C6CCA5700836DDF /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08352C6CCA5700836DDF /* RegisterRequest.swift */; };
-		83EC085A2C6CCA5700836DDF /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08362C6CCA5700836DDF /* RegisterResponse.swift */; };
 		83EC085B2C6CCA5700836DDF /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC08382C6CCA5700836DDF /* LoginScreen.swift */; };
 		83EC085C2C6CCA5700836DDF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC083A2C6CCA5700836DDF /* LoginViewModel.swift */; };
 		83EC085D2C6CCA5700836DDF /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EC083D2C6CCA5700836DDF /* RootScreen.swift */; };
@@ -97,9 +96,8 @@
 		83EC08302C6CCA5700836DDF /* LoginAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
 		83EC08312C6CCA5700836DDF /* RegisterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAction.swift; sourceTree = "<group>"; };
 		83EC08332C6CCA5700836DDF /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
-		83EC08342C6CCA5700836DDF /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		83EC08342C6CCA5700836DDF /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		83EC08352C6CCA5700836DDF /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
-		83EC08362C6CCA5700836DDF /* RegisterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		83EC08382C6CCA5700836DDF /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		83EC083A2C6CCA5700836DDF /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		83EC083D2C6CCA5700836DDF /* RootScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
@@ -320,9 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				83EC08332C6CCA5700836DDF /* LoginRequest.swift */,
-				83EC08342C6CCA5700836DDF /* LoginResponse.swift */,
+				83EC08342C6CCA5700836DDF /* AuthResponse.swift */,
 				83EC08352C6CCA5700836DDF /* RegisterRequest.swift */,
-				83EC08362C6CCA5700836DDF /* RegisterResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -613,8 +610,7 @@
 				839830A72CEB8714001E0B6F /* CreateTaskAction.swift in Sources */,
 				83F428622CEC911600DD2ACF /* TaskDeleteAction.swift in Sources */,
 				83EC08152C6CC91100836DDF /* APIError.swift in Sources */,
-				83EC085A2C6CCA5700836DDF /* RegisterResponse.swift in Sources */,
-				83EC08582C6CCA5700836DDF /* LoginResponse.swift in Sources */,
+				83EC08582C6CCA5700836DDF /* AuthResponse.swift in Sources */,
 				83EC08602C6CCA5700836DDF /* SettingsScreen.swift in Sources */,
 				835223482CEB31D200B054CF /* TaskSheetView.swift in Sources */,
 				83D0AE142CE39C75003E4799 /* TasksResponse.swift in Sources */,

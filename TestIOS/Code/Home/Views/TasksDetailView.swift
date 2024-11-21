@@ -82,8 +82,9 @@ struct TasksDetailView: View {
                 Text(task.description)
               }
 
+              Spacer()
+
               if task.isComplete == true {
-                Spacer()
                 Image(systemName: "checkmark.circle")
                   .font(.system(size: 24))
                   .foregroundStyle(.green)
@@ -130,11 +131,7 @@ struct TasksDetailView: View {
 
       }
       .sheet(item: $editableTask) { task in
-        TaskSheetView(
-          task: task,
-          onSave: onReceiveTask,
-          onDelete: deleteOne
-        )
+        TaskSheetView(task: task, onSave: onReceiveTask, onDelete: deleteOne)
       }
       .onAppear {
         containerTitle = taskContainer.title

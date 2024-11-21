@@ -77,7 +77,7 @@ struct TaskData: Hashable, Codable {
           "Create an Android app using Kotlin with Jetpack Compose",
         isComplete: false,
         color: "white"
-      )
+      ),
     ]
   #endif
 }

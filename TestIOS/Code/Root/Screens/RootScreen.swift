@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct RootScreen: View {
-    @EnvironmentObject var auth: Auth
-    
-    var body: some View {
-        if auth.loggedIn {
-            TabsView()
-        } else {
-            LoginScreen()
-        }
+  @EnvironmentObject var auth: Auth
+
+  var body: some View {
+    if auth.loggedIn {
+      TabsView()
+    } else {
+      LoginScreen()
     }
+  }
 }
 
 #Preview {
-    RootScreen()
-        .environmentObject(Auth.shared)
+  RootScreen()
+    .environmentObject(Auth.shared)
 }

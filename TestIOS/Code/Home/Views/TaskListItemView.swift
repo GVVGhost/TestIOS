@@ -31,7 +31,6 @@ struct TaskListItemView: View {
       ForEach(Array(container.tasks.prefix(3)), id: \.place) { task in
         HStack(alignment: .firstTextBaseline) {
           Text(task.place, format: .number)
-
           VStack(alignment: .leading) {
             Text("\(task.title) \(task.isComplete ? "(completed)" : "")")
               .font(.system(size: 14, weight: task.isComplete ? .regular : .semibold))
@@ -40,6 +39,7 @@ struct TaskListItemView: View {
         }
         .font(.system(size: 14))
       }
+      
       if container.tasks.count > 3 {
         Text("...")
       }

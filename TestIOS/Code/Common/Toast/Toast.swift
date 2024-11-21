@@ -6,8 +6,8 @@
 //
 
 struct Toast: Equatable, Hashable {
-    var style: ToastStyle
-    var message: String
-    var duration: Double = 3
-    var width: Double = .infinity
+  var style: ToastStyle
+  var message: String
+  var duration: Double = 3
+  var width: Double = .infinity
 }

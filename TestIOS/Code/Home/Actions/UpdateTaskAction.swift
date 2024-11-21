@@ -23,25 +23,13 @@ struct UpdateTaskAction {
       authorized: Auth.shared.loggedIn,
       parameters: taskContainer
     ) { data in
-      print(data.debugDescription)
-      if let response = try? JSONDecoder().decode(
-        TaskContainer.self,
-        from: data
-      ) {
+      if let response = try? JSONDecoder().decode(TaskContainer.self, from: data) {
         completion(response)
       } else {
-        print("Failed to decode response")
-        failure(
-          NSLocalizedString("Failed to decode response", comment: "")
-        )
+        failure(NSLocalizedString("Failed to decode response", comment: ""))
       }
     } failure: { errorResult in
-      failure(
-        errorsByStatus[
-          errorResult.status,
-          default: errorResult.message
-        ]
-      )
+      failure(errorsByStatus[errorResult.status, default: errorResult.message])
     }
   }
 }

@@ -61,5 +61,5 @@ struct ContainerSheetView: View {
 }
 
 #Preview {
-  ContainerSheetView(onCreate: {_ in}, onFailed: {_ in}, title: "", description: "")
+  ContainerSheetView(onCreate: { _ in }, onFailed: { _ in }, title: "", description: "")
 }

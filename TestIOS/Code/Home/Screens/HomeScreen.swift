@@ -15,18 +15,15 @@ struct HomeScreen: View {
   var body: some View {
     NavigationStack {
       List {
-        ForEach(
-          viewModel.taskContainers.reversed(),
-          id: \.self
-        ) { taskContainer in
+        ForEach(viewModel.taskContainers.reversed(), id: \.self) { taskContainer in
           NavigationLink {
             TasksDetailView(
               taskContainer: taskContainer,
               onDeleteContainer: { taskContainer in
-                viewModel.deleteTask(taskContainer.uuid)
+                viewModel.deleteTaskContainer(taskContainer.uuid)
               },
               onSaveContainer: { taskContainer in
-                viewModel.updateTask(taskContainer)
+                viewModel.updateTaskContainer(taskContainer)
               }
             )
           } label: {
@@ -37,7 +34,7 @@ struct HomeScreen: View {
       .sheet(isPresented: $isPresented) {
         ContainerSheetView(
           onCreate: { taskContainer in
-            viewModel.createTask(taskContainer)
+            viewModel.createTaskContainer(taskContainer)
           },
           onFailed: { errorMessage in
             toast = Toast(style: .error, message: errorMessage)
@@ -53,15 +50,8 @@ struct HomeScreen: View {
           }
         }
       }
-      .onAppear {
-        viewModel.loadTasks()
-        #if DEBUG
-          viewModel.taskContainers = [TaskContainer.examle]
-        #endif
-      }
-      .refreshable {
-        viewModel.loadTasks()
-      }
+      .onAppear { viewModel.loadTaskContainers() }
+      .refreshable { viewModel.loadTaskContainers() }
       .toastView(toast: $viewModel.toast)
     }
   }
